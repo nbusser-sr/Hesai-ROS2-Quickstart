@@ -18,7 +18,7 @@ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
 ## Run
 
 ```sh
-source install/setup.zsh
+source install/local_setup.zsh
 ros2 launch hesai_ros_driver start.py
 ```
 
