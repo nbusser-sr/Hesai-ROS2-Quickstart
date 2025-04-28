@@ -1,5 +1,13 @@
 # Hesai ROS2 Jazzy quickstart
 
+## Setup
+
+Install boost and YAML libraries
+```sh
+sudo apt-get update && \
+sudo apt-get install -y libboost-all-dev libyaml-cpp-dev
+```
+
 ## Config
 
 Modify the following parameters in `src/HesaiLidar_ROS_2.0/config/config.yaml`:
@@ -11,14 +19,15 @@ Modify the following parameters in `src/HesaiLidar_ROS_2.0/config/config.yaml`:
 ## Build
 
 ```sh
-source /opt/ros/jazzy/setup.zsh
-colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
+source /opt/ros/jazzy/setup.zsh && \
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Debug
 ```
 
 ## Run
 
 ```sh
-source install/local_setup.zsh
+source /opt/ros/jazzy/setup.zsh && \
+source install/local_setup.zsh && \
 ros2 launch hesai_ros_driver start.py
 ```
 
